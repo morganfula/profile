@@ -1,0 +1,218 @@
+@import "../assets/fonts/mateifont/stylesheet.css";
+ *, *::after, *::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+ :root {
+	font-size: 16px;
+	overscroll-behavior-x: none;
+}
+ body {
+	--loader-bg: #fed622;
+	--background-color: #fed622;
+	--border-distance-w: 3vw;
+	--border-distance-h: 3vh;
+	--headline-height: 174px;
+	--subline-height: 80px;
+  --yellow: #202020;
+  --red: #fd423b;
+	 --container-height: calc(100vh - 2 * var(--border-distance-w));
+	--benjamin-height: calc(var(--container-height) - var(--headline-height) - var(--subline-height));
+	 --benjamin-width: calc(var(--container-height) - var(--headline-height) - var(--subline-height) * 1 / 1.22);
+	--background-sphere-radius: calc(var(--benjamin-height) / 1.15);
+	--foreground-sphere-radius: calc(var(--benjamin-height) / 10);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+	color: white;
+	overscroll-behavior-x: none;
+	background: var(--background-color);
+	position: relative;
+}
+ .container {
+  position: absolute;
+	width: calc(100vw - 2 * var(--border-distance-w));
+	height: calc(100vh - 2 * var(--border-distance-w));
+	left: var(--border-distance-w);
+	top: var(--border-distance-w);
+	border: 7px solid var(--yellow);
+	display: flex;
+	flex-direction: column;
+}
+
+.headline {
+	height: var(--headline-height);
+	display: flex;
+  align-items: center;
+	font-family: 'gtfxebl';
+	font-size: 164px;
+	border-bottom: 7px solid var(--yellow);
+	flex-wrap: nowrap;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.headline .sliding-headline {
+	white-space: nowrap;
+	animation: slideLeft 40s infinite linear;
+	margin-top: -32px;
+}
+.headline .sliding-headline span {
+	margin-right: 0.1em;
+}
+.headline .sliding-headline span:nth-child(2n) {
+	color: var(--yellow);
+}
+.headline .sliding-headline span:nth-child(2n+1) {
+	color: transparent;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: var(--yellow);
+}
+ .container {
+	 position: absolute;
+	 width: calc(100vw - 2 * var(--border-distance-w));
+	 height: calc(100vh - 2 * var(--border-distance-w));
+	 left: var(--border-distance-w);
+	 top: var(--border-distance-w);
+	 border: 7px solid var(--yellow);
+}
+ .subline {
+	 height: var(--subline-height);
+	 display: flex;
+	 align-items: center;
+	 font-family: 'gtfxebo';
+	 font-size: 47px;
+	 border-bottom: 7px solid var(--yellow);
+	 flex-wrap: nowrap;
+	 white-space: nowrap;
+	 overflow: hidden;
+}
+ .subline .sliding-headline {
+	 white-space: nowrap;
+	 animation: slideLeft 40s infinite linear reverse;
+	 margin-top: -7px;
+}
+ .subline .sliding-headline span {
+	 margin-right: 0.1em;
+}
+ .subline .sliding-headline span:nth-child(2n) {
+	 color: var(--yellow);
+}
+ .subline .sliding-headline span:nth-child(2n+1) {
+	 color: transparent;
+	 -webkit-text-stroke-width: 1px;
+	 -webkit-text-stroke-color: var(--yellow);
+}
+ main {
+	 flex-grow: 1;
+	 position: relative;
+	 overflow: hidden;
+}
+ main .background-sphere {
+	 position: absolute;
+	 bottom: calc(var(--border-distance-h) / 2);
+	 left: calc(var(--border-distance-h) / 2);
+	 width: var(--background-sphere-radius);
+	 padding-bottom: var(--background-sphere-radius);
+	 border-radius: 50%;
+	 background: var(--red);
+	 z-index: 1;
+}
+ main .morganfula {
+	 width: calc(var(--container-height) - var(--headline-height) - var(--subline-height) * 1 / 0.45);
+	 position: absolute;
+	 z-index: 2;
+	 left: var(--border-distance-h);
+	 bottom: 0;
+}
+ main .foreground-sphere {
+	 position: absolute;
+	 bottom: calc(var(--border-distance-h) * 2);
+	 left: 50vh;
+	 width: var(--foreground-sphere-radius);
+	 padding-bottom: var(--foreground-sphere-radius);
+	 border-radius: 50%;
+	 background: var(--red);
+	 z-index: 3;
+}
+ main .description-wrapper {
+	 width: calc(100% - calc(var(--container-height) - var(--headline-height) - var(--subline-height) * 1 / 1.22));
+	 position: absolute;
+	 height: 100%;
+	 top: 0;
+	 right: 0;
+	 display: flex;
+	 justify-content: space-around;
+	 flex-direction: column;
+	 z-index: 100;
+}
+ main .description-wrapper .description {
+	 max-width: 376px;
+	 margin: 0 auto;
+	 color: var(--yellow);
+	 font-family: 'gtfr';
+	 font-size: 18px;
+	 line-height: 28px;
+}
+ main .description-wrapper .description a {
+	 color: currentColor;
+}
+ main .description-wrapper .description p {
+	 margin-bottom: 1vw;
+}
+ main .description-wrapper .description p.mail {
+	 display: flex;
+	 align-items: center;
+}
+ main .description-wrapper .description p.mail svg {
+	 width: 30px;
+	 margin-right: 0.8em;
+}
+ main .description-wrapper .description p.mail svg path {
+	 fill: var(--yellow);
+}
+ @keyframes slideLeft {
+	 0% {
+		 transform: translate3d(0, 0, 0);
+	}
+	 100% {
+		 transform: translate3d(-100%, 0, 0);
+	}
+}
+ @media screen and (max-width: 1024px) {
+	 body {
+		 overflow: inherit;
+	}
+	 .container {
+		 display: block;
+		 height: auto;
+	}
+	 main {
+		 padding-bottom: calc(100% * .8);
+	}
+	 main .description-wrapper {
+		 width: 100%;
+		 position: relative;
+		 padding: 30px 0;
+		 max-width: 80%;
+		 margin: auto;
+	}
+	 main .background-sphere {
+		 width: 70%;
+		 padding-bottom: 70%;
+	}
+	 main .morganfula {
+     width: 100%;
+	}
+	 main .foreground-sphere {
+		 width: 10%;
+		 padding-bottom: 10%;
+	}
+}
+ @media screen and (min-width: 1400px) {
+	 main .description-wrapper .description {
+		 max-width: 656px;
+		 font-size: 20px;
+	}
+}
+ 
