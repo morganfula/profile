@@ -2,7 +2,7 @@
   "dependencies": {
     "@johh/three-effectcomposer": "^0.0.7",
     "assets": "^3.0.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dat.gui": "^0.7.7",
     "gsap": "^3.2.6",
     "load-bmfont": "^1.4.0",
