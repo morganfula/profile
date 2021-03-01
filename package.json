@@ -9,7 +9,7 @@
     "node-sass": "^4.14.1",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-asset-copier": "^1.0.0",
-    "three": ">=0.102.0",
+    "three": ">=0.125.0",
     "three-bmfont-text": "github:dmarcos/three-bmfont-text#1babdf8507"
   },
   "devDependencies": {
